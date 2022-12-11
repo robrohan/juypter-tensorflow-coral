@@ -8,3 +8,6 @@ test:
 		-v $(PWD)/work:/home/jovyan/work \
 		-p 8888:8888 \
 		$(REPO)/juypter-tensorflow-coral
+
+publish:
+	docker push $(REPO)/juypter-tensorflow-coral
