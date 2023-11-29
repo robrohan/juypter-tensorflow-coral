@@ -1,5 +1,6 @@
 # FROM jupyter/base-notebook:python-3.8.6
 FROM jupyter/tensorflow-notebook:python-3.8.13
+# FROM quay.io/jupyter/tensorflow-notebook:python-3.8.13
 
 USER root
 RUN apt-get update \
