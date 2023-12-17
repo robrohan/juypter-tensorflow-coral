@@ -5,7 +5,7 @@ FROM jupyter/tensorflow-notebook:python-3.8.13
 USER root
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-        curl apt-utils apt-transport-https gnupg2 \
+        curl apt-utils apt-transport-https gnupg2 graphviz \
     && rm -rf /var/lib/apt/lists/*
 
 # for apt to get the coral libraries
@@ -25,7 +25,7 @@ RUN python -m pip install \
     --extra-index-url https://google-coral.github.io/py-repo/ pycoral~=2.0
 # and upgrade tensorflow
 RUN python -m pip install \
-    tensorflow==2.10.0 h5py Pillow tqdm ftfy regex \
+    tensorflow==2.10.0 h5py Pillow tqdm ftfy regex pydot \
     tensorflow-addons tensorflow_datasets
 RUN python -m pip cache purge
 
